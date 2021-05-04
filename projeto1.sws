@@ -136,6 +136,21 @@
     []
   []
  [file]
+  name = comparador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = comparador_12bits.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = bloco_comparador.vhdl
+  [options]
+  []
+ []
+ [file]
   name = subtrator.vhdl
   [options]
   []
@@ -151,7 +166,17 @@
   []
  []
  [file]
+  name = divisor.vhdl
+  [options]
+  []
+ []
+ [file]
   name = test.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = test_comp.vhdl
   [options]
   []
  []
