@@ -1,0 +1,5 @@
+ieeevarstd_logic_1164ieee.sym/std_logic_1164/prim.var
+ieeesrcstd_logic_1164stdlogic.vhd
+.varsubtrator(comportamento_subtrator)projeto1.sym/subtrator/_comportamento_subtrator.var
+.srcsubtrator(comportamento_subtrator)subtrator.vhdl
+.varsubtratorprojeto1.sym/subtrator/prim.var
