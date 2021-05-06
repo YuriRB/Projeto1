@@ -39,3 +39,4 @@ BEGIN
 	end generate G1;
 	S <= S_contador when EN_Saida = '0';
 END ARCHITECTURE;
+

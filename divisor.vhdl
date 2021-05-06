@@ -20,7 +20,7 @@ ARCHITECTURE Comportamento_Divisor OF divisor IS
 		PORT(
 			A: IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
 			B: IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
-			S_Maior_Igual: OUT STD_LOGIC_VECTOR
+			S_Maior_Igual: OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
@@ -52,5 +52,6 @@ BEGIN
 	EN_S <= S_Mag;	
 	
 END ARCHITECTURE;
+
 
 

@@ -16,7 +16,7 @@ ARCHITECTURE somador_esquematico OF somador4bits IS
 			S,C : OUT STD_LOGIC
 		);
 	END COMPONENT;
-	SIGNAL C: STD_LOGIC_VECTOR (3 DOWNTO 0);
+	SIGNAL C: STD_LOGIC_VECTOR (11 DOWNTO 0);
 BEGIN
 	somador01: meio_somador PORT MAP(A( 0), B    , S( 0), C( 0));
 	somador02: meio_somador PORT MAP(A( 1), C( 0), S( 1), C( 1));
@@ -31,4 +31,5 @@ BEGIN
 	somador11: meio_somador PORT MAP(A(10), C( 9), S(10), C(10));
 	somador12: meio_somador PORT MAP(A(11), C(10), S(11), C(11));
 END ARCHITECTURE;
+
 

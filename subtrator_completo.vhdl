@@ -9,7 +9,7 @@ ENTITY subtrator_12bits IS
 	);
 END ENTITY;
 
-ARCHITECTURE subtrator_esquematico OF subtrator_12STD_LOGICs IS
+ARCHITECTURE subtrator_esquematico OF subtrator_12bits IS
 	COMPONENT subtrator IS
 		PORT(
 			A,B,Tin: IN STD_LOGIC; 
@@ -31,6 +31,7 @@ BEGIN
 	subtrator11: subtrator PORT MAP(A(10), '0' , Tout( 9), S(10), Tout(10));
 	subtrator12: subtrator PORT MAP(A(11), '0' , Tout(10), S(11), Tout(11));
 END ARCHITECTURE;
+
 
 
 
