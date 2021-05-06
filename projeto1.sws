@@ -151,6 +151,11 @@
   []
  []
  [file]
+  name = bloco_somador.vhdl
+  [options]
+  []
+ []
+ [file]
   name = subtrator.vhdl
   [options]
   []
@@ -167,6 +172,16 @@
  []
  [file]
   name = divisor.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = meio_somador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = somador4bits.vhdl
   [options]
   []
  []

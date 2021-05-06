@@ -1,0 +1,3 @@
+.varbloco_somador(estrutura_somador)projeto1.sym/bloco_somador/_estrutura_somador.var
+.srcbloco_somador(estrutura_somador)bloco_somador.vhdl
+.varbloco_somadorprojeto1.sym/bloco_somador/prim.var
