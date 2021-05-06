@@ -9,7 +9,7 @@ ARCHITECTURE teste_som OF teste_somador IS
 			S   : OUT BIT_VECTOR(3 DOWNTO 0)
 		);
 	END COMPONENT;
-	SIGNAL A,S: BIT_VECTOR(0 TO 0);
+	SIGNAL A,S: BIT_VECTOR(3 DOWNTO 0);
 	SIGNAL B: BIT;
 BEGIN
 	som: bloco_somador PORT MAP (A,B,S);

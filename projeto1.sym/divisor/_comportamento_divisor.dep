@@ -1,0 +1,3 @@
+.vardivisor(comportamento_divisor)projeto1.sym/divisor/_comportamento_divisor.var
+.srcdivisor(comportamento_divisor)divisor.vhdl
+.vardivisorprojeto1.sym/divisor/prim.var
