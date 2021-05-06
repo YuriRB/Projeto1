@@ -2,7 +2,7 @@ ENTITY divisor IS
 	PORT (
 		A   : IN bit_VECTOR(11 DOWNTO 0); 
 		B   : IN bit_VECTOR(4 DOWNTO 0); 
-		S   : OUT bit_VECTOR(4 DOWNTO 0)
+		S   : OUT bit_VECTOR(3 DOWNTO 0)
 	);
 END ENTITY;
 
@@ -14,6 +14,7 @@ ARCHITECTURE Comportamento_Divisor OF divisor IS
 			S_Maior_Igual: OUT BIT
 		);
 	END COMPONENT;
+	
 	COMPONENT bloco_subtrator IS
 		PORT(
 			A   : IN bit_VECTOR(11 DOWNTO 0); 
@@ -21,13 +22,30 @@ ARCHITECTURE Comportamento_Divisor OF divisor IS
 			S   : OUT bit_VECTOR(11 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+	COMPONENT bloco_somador IS
+		PORT(	
+			A   : IN BIT_VECTOR(3 DOWNTO 0); 
+			B   : IN BIT; 
+			S   : OUT BIT_VECTOR(3 DOWNTO 0)
+		);
+	END COMPONENT;
+	
 	SIGNAL S_Mag: BIT;
 	SIGNAL Resto,Saida: BIT_VECTOR(11 DOWNTO 0);
+	SIGNAL B_Somador: BIT;
+	SIGNAL A_Somador,Resultado1,Resultado2,Resultado3,Resultado4,Resultado5,Resultado6,Resultado7,Resultado8,Resultado9,Resultado10,Resultado11,Resultado_Final: BIT_VECTOR(3 DOWNTO 0);
+	
 BEGIN
 	Resto <= A;
+	A_Somador <= "0000";
+	
 	Comp: bloco_comparador PORT MAP (Resto,B,S_Mag);
 	Sub: bloco_subtrator PORT MAP (Resto,B,Resto);
-	Saida <=  WHEN S_Mag( 0) = 1
+	Som: bloco_somador PORT MAP(A_Somador,B_Somador,Resultado1);
+	
+	A_Somador <= Resultado1 WHEN S_Mag = '1' ELSE S <= A_Somador;
+	Resto <= A IF S_Final = A_Somador THEN Soma_Final: bloco_somador PORT MAP(A_Somador,B_Somador,S);
 		
 END ARCHITECTURE;
 
