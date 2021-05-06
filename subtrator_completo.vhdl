@@ -3,20 +3,20 @@ use ieee.std_logic_1164.all;
 
 ENTITY subtrator_12bits IS
 	PORT(	
-		A   : IN bit_VECTOR(11 DOWNTO 0); 
-		B   : IN bit_VECTOR(4 DOWNTO 0); 
-		S   : OUT bit_VECTOR(11 DOWNTO 0)
+		A   : IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+		B   : IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
+		S   : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
 	);
 END ENTITY;
 
-ARCHITECTURE subtrator_esquematico OF subtrator_12bits IS
+ARCHITECTURE subtrator_esquematico OF subtrator_12STD_LOGICs IS
 	COMPONENT subtrator IS
 		PORT(
-			A,B,Tin: IN bit; 
-			S,Tout : OUT bit
+			A,B,Tin: IN STD_LOGIC; 
+			S,Tout : OUT STD_LOGIC
 		);
 	END COMPONENT;
-	SIGNAL Tout: bit_VECTOR(11 DOWNTO 0);
+	SIGNAL Tout: STD_LOGIC_VECTOR(11 DOWNTO 0);
 BEGIN
 	subtrator01: subtrator PORT MAP(A( 0), B(0), '0'     , S( 0), Tout( 0));
 	subtrator02: subtrator PORT MAP(A( 1), B(1), Tout( 0), S( 1), Tout( 1));
@@ -31,5 +31,6 @@ BEGIN
 	subtrator11: subtrator PORT MAP(A(10), '0' , Tout( 9), S(10), Tout(10));
 	subtrator12: subtrator PORT MAP(A(11), '0' , Tout(10), S(11), Tout(11));
 END ARCHITECTURE;
+
 
 

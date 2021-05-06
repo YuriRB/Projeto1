@@ -103,7 +103,7 @@
 # Begin description of library projeto1
 [library]
  name = projeto1
- toplevel = teste_somador
+ toplevel = teste_divisor
   [options]
     [booloption]
      name	= -87
@@ -136,22 +136,7 @@
     []
   []
  [file]
-  name = comparador.vhdl
-  [options]
-  []
- []
- [file]
-  name = comparador_12bits.vhdl
-  [options]
-  []
- []
- [file]
   name = bloco_comparador.vhdl
-  [options]
-  []
- []
- [file]
-  name = subtrator.vhdl
   [options]
   []
  []
@@ -161,7 +146,7 @@
   []
  []
  [file]
-  name = meio_somador.vhdl
+  name = bloco_subtrator.vhdl
   [options]
   []
  []
@@ -176,12 +161,32 @@
   []
  []
  [file]
-  name = bloco_subtrator.vhdl
+  name = divisor.vhdl
   [options]
   []
  []
  [file]
-  name = divisor.vhdl
+  name = Bloco_Divisor.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = comparador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = comparador_12bits.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = meio_somador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = subtrator.vhdl
   [options]
   []
  []
@@ -192,6 +197,11 @@
  []
  [file]
   name = test_comp.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = Teste_Divisor.vhdl
   [options]
   []
  []

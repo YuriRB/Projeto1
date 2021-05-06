@@ -1,20 +1,23 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
 ENTITY comparador_12bits IS
 	PORT(	
-		A: IN BIT_VECTOR(11 DOWNTO 0); 
-		B: IN BIT_VECTOR(4 DOWNTO 0); 
-		Sigual,Smaior: OUT BIT
+		A: IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+		B: IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
+		Sigual,Smaior: OUT STD_LOGIC
 	);
 END ENTITY;
 
 ARCHITECTURE comparador_esquematico OF comparador_12bits IS
 	COMPONENT comparador IS
 		PORT(
-		A,B,Eigual: IN BIT; 
-		Sigual,Smaior: OUT BIT
+		A,B,Eigual: IN STD_LOGIC; 
+		Sigual,Smaior: OUT STD_LOGIC
 	);
 	END COMPONENT;
-	SIGNAL Maior: BIT_VECTOR(11 DOWNTO 0);
-	SIGNAL Igual: BIT_VECTOR(10 DOWNTO 0);
+	SIGNAL Maior: STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL Igual: STD_LOGIC_VECTOR(11 DOWNTO 0);
 BEGIN
 	comparador01: comparador PORT MAP(A( 0), B(0), '1'      , Igual( 0), Maior( 0));
 	comparador02: comparador PORT MAP(A( 1), B(1), Igual( 0), Igual( 1), Maior( 1));
@@ -30,4 +33,5 @@ BEGIN
 	comparador12: comparador PORT MAP(A(11), '0' , Igual(10), Sigual   , Maior(11));
 	Smaior <= (Maior(0) OR Maior(1) OR Maior(2) OR Maior(3) OR Maior(4) OR Maior(5) OR Maior(6) OR Maior(7) OR Maior(8) OR Maior(9) OR Maior(10) OR Maior(11));
 END ARCHITECTURE;
+
 

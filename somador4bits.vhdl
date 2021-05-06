@@ -1,19 +1,22 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
 ENTITY somador4bits IS
 	PORT(	
-		A   : IN BIT_VECTOR(11 DOWNTO 0); 
-		B   : IN BIT; 
-		S   : OUT BIT_VECTOR(11 DOWNTO 0)
+		A   : IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+		B   : IN STD_LOGIC; 
+		S   : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
 	);
 END ENTITY;
 
 ARCHITECTURE somador_esquematico OF somador4bits IS
 	COMPONENT meio_somador IS
 		PORT(
-			A,B: IN BIT; 
-			S,C : OUT BIT
+			A,B: IN STD_LOGIC; 
+			S,C : OUT STD_LOGIC
 		);
 	END COMPONENT;
-	SIGNAL C: BIT_VECTOR (3 DOWNTO 0);
+	SIGNAL C: STD_LOGIC_VECTOR (3 DOWNTO 0);
 BEGIN
 	somador01: meio_somador PORT MAP(A( 0), B    , S( 0), C( 0));
 	somador02: meio_somador PORT MAP(A( 1), C( 0), S( 1), C( 1));

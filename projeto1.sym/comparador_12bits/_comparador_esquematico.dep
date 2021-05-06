@@ -1,3 +1,5 @@
+ieeevarstd_logic_1164ieee.sym/std_logic_1164/prim.var
+ieeesrcstd_logic_1164stdlogic.vhd
 .varcomparador_12bits(comparador_esquematico)projeto1.sym/comparador_12bits/_comparador_esquematico.var
 .srccomparador_12bits(comparador_esquematico)comparador_12bits.vhdl
 .varcomparador_12bitsprojeto1.sym/comparador_12bits/prim.var

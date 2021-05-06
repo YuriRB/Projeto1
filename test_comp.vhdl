@@ -1,17 +1,20 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
 ENTITY test_comp IS
 END ENTITY;
 
 ARCHITECTURE teste_comp OF test_comp IS
 	COMPONENT bloco_comparador IS
 		PORT(	
-			A: IN BIT_VECTOR(11 DOWNTO 0); 
-			B: IN BIT_VECTOR(4 DOWNTO 0); 
-			Sigual,Smaior,Smenor: OUT BIT
+			A: IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+			B: IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
+			Sigual,Smaior,Smenor: OUT STD_LOGIC
 		);
 	END COMPONENT;
-	SIGNAL A: BIT_VECTOR(11 DOWNTO 0);
-	SIGNAL B: BIT_VECTOR(4 DOWNTO 0);
-	SIGNAL Sigual,Smaior,Smenor: BIT;
+	SIGNAL A: STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL B: STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL Sigual,Smaior,Smenor: STD_LOGIC;
 BEGIN
 	sub: bloco_comparador PORT MAP (A,B,Sigual,Smaior,Smenor);
 	PROCESS
@@ -31,3 +34,4 @@ BEGIN
 		wait for 100 ns;
 	END PROCESS;
 END ARCHITECTURE;
+
