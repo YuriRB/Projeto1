@@ -40,9 +40,11 @@ ARCHITECTURE Comportamento_Divisor OF divisor IS
 	SIGNAL A_Somador,Resultado_Final: BIT_VECTOR(11 DOWNTO 0);
 	
 BEGIN
-	Comp: bloco_comparador PORT MAP (A,B,EN_S);
+	
+	Comp: bloco_comparador PORT MAP (A,B,S_Mag);
 	Sub: bloco_subtrator PORT MAP (A,B,R);
-	Soma: bloco_somador PORT MAP(A_Somador,EN_E,S);	
+	Soma: bloco_somador PORT MAP(A_Somador,S_Mag,S);
+	EN_S <= S_Mag;	
 		
 END ARCHITECTURE;
 
