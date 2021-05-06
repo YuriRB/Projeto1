@@ -1,10 +1,13 @@
 ENTITY divisor IS
+	GENERIC(
+		n : natural := 8
+	);
 	PORT (
-		A   : IN  BIT_VECTOR(11 DOWNTO 0); 
+		A   : BUFFER  BIT_VECTOR(11 DOWNTO 0); 
 		B   : IN  BIT_VECTOR(4 DOWNTO 0);
 		EN_E: IN  BIT; 
 		EN_S: OUT BIT;
-		R   : OUT BIT_VECTOR(11 DOWNTO 0);
+		R   : buffer BIT_VECTOR(11 DOWNTO 0);
 		S   : OUT BIT_VECTOR(11 DOWNTO 0)
 	);
 END ENTITY;
@@ -38,14 +41,14 @@ ARCHITECTURE Comportamento_Divisor OF divisor IS
 	SIGNAL Resto,Saida: BIT_VECTOR(11 DOWNTO 0);
 	SIGNAL B_Somador: BIT;
 	SIGNAL A_Somador,Resultado_Final: BIT_VECTOR(11 DOWNTO 0);
-	
 BEGIN
 	
 	Comp: bloco_comparador PORT MAP (A,B,S_Mag);
-	Sub: bloco_subtrator PORT MAP (A,B,R);
+	Sub: bloco_subtrator PORT MAP (A,B,Resto);
 	Soma: bloco_somador PORT MAP(A_Somador,S_Mag,S);
+	R <= Resto;
 	EN_S <= S_Mag;	
-		
+	
 END ARCHITECTURE;
 
 

@@ -1,0 +1,28 @@
+ENTITY Bloco_Divisor IS
+	GENERIC(
+		n : natural := 8
+	);
+	PORT (
+		A   : BIT_VECTOR(11 DOWNTO 0); 
+		B   : IN  BIT_VECTOR(4 DOWNTO 0);
+		S   : OUT BIT_VECTOR(11 DOWNTO 0)
+	);
+END ENTITY;
+
+ARCHITECTURE divisor_esquematico OF Bloco_Divisor IS
+	COMPONENT divisor IS
+		PORT(
+			A   : BUFFER  BIT_VECTOR(11 DOWNTO 0); 
+			B   : IN  BIT_VECTOR(4 DOWNTO 0);
+			EN_E: IN  BIT; 
+			EN_S: OUT BIT;
+			R   : buffer BIT_VECTOR(11 DOWNTO 0);
+			S   : OUT BIT_VECTOR(11 DOWNTO 0)
+		);
+	END COMPONENT;
+	SIGNAL A_LOOP: BIT_VECTOR(11 DOWNTO 0);
+	SIGNAL EN_Saida, EN_Entrada: BIT;
+	SIGNAL S_Contador,Resto: BIT_VECTOR(11 DOWNTO 0);
+BEGIN
+	div: divisor PORT MAP(
+END ARCHITECTURE;
