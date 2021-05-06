@@ -2,7 +2,7 @@ LIBRARY ieee;
 use ieee.std_logic_1164.all;
 
 ENTITY meio_somador IS
-	PORT (A,B: IN bit; S,Carry: OUT bit);
+	PORT (A,B: IN bit; S,C: OUT bit);
 END ENTITY;
 
 ARCHITECTURE Comportamento_somador OF meio_somador IS

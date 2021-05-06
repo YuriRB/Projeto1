@@ -103,7 +103,7 @@
 # Begin description of library projeto1
 [library]
  name = projeto1
- toplevel = test
+ toplevel = teste_somador
   [options]
     [booloption]
      name	= -87
@@ -151,27 +151,12 @@
   []
  []
  [file]
-  name = bloco_somador.vhdl
-  [options]
-  []
- []
- [file]
   name = subtrator.vhdl
   [options]
   []
  []
  [file]
   name = subtrator_completo.vhdl
-  [options]
-  []
- []
- [file]
-  name = bloco_subtrator.vhdl
-  [options]
-  []
- []
- [file]
-  name = divisor.vhdl
   [options]
   []
  []
@@ -186,12 +171,32 @@
   []
  []
  [file]
+  name = bloco_somador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = bloco_subtrator.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = divisor.vhdl
+  [options]
+  []
+ []
+ [file]
   name = test.vhdl
   [options]
   []
  []
  [file]
   name = test_comp.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = teste_somador.vhdl
   [options]
   []
  []
