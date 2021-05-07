@@ -36,11 +36,11 @@ BEGIN
 	S <= "000000000000" WHEN B = "00000" OR A = "000000000000" ELSE
 	     "000000000001" WHEN A = B ELSE
 	     A WHEN B = "00001" ELSE
-	     A & '0' 0 WHEN B = "00001" ELSE
-	     A & '0' 1 WHEN B = "00010" ELSE 
-	     A & '0' 2 WHEN B = "00100" ELSE
-	     A & '0' 3 WHEN B = "01000" ELSE
-	     A & '0' 4 WHEN B = "10000" ELSE
+	     A((11-1) downto 0) & A(11 downto (11-1)) WHEN B = "00001" ELSE
+	     A((11-2) downto 0) & A(11 downto (11-2)) WHEN B = "00010" ELSE 
+	     A((11-3) downto 0) & A(11 downto (11-3)) WHEN B = "00100" ELSE
+	     A((11-4) downto 0) & A(11 downto (11-4)) WHEN B = "01000" ELSE
+	     A((11-5) downto 0) & A(11 downto (11-5)) WHEN B = "10000" ELSE
 	     "000000000000";
 
 	EN_Entrada <= '1';
@@ -54,5 +54,3 @@ BEGIN
 	end generate G1;
 	S <= S_contador when EN_Saida = '0';
 END ARCHITECTURE;
-
-
