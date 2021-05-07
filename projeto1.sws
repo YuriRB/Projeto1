@@ -136,7 +136,22 @@
     []
   []
  [file]
+  name = comparador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = comparador_12bits.vhdl
+  [options]
+  []
+ []
+ [file]
   name = bloco_comparador.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = subtrator.vhdl
   [options]
   []
  []
@@ -147,6 +162,11 @@
  []
  [file]
   name = bloco_subtrator.vhdl
+  [options]
+  []
+ []
+ [file]
+  name = meio_somador.vhdl
   [options]
   []
  []
@@ -171,22 +191,7 @@
   []
  []
  [file]
-  name = comparador.vhdl
-  [options]
-  []
- []
- [file]
-  name = comparador_12bits.vhdl
-  [options]
-  []
- []
- [file]
-  name = meio_somador.vhdl
-  [options]
-  []
- []
- [file]
-  name = subtrator.vhdl
+  name = HardwareDivisor.vhdl
   [options]
   []
  []

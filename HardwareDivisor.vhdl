@@ -1,0 +1,40 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY Hardware_divisor IS
+	PORT(
+		A,B: IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+		S,R: OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+	);
+END ENTITY;
+
+ARCHITECTURE comportamento OF Hardware_divisor IS
+	COMPONENT bloco_comparador IS
+		PORT(	
+			A: IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+			B: IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
+			S_Maior_Igual: OUT STD_LOGIC
+		);
+	END COMPONENT;
+	COMPONENT bloco_subtrator IS
+		PORT(	
+			A   : IN STD_LOGIC_VECTOR(11 DOWNTO 0); 
+			B   : IN STD_LOGIC_VECTOR(4 DOWNTO 0); 
+			S   : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+		);
+	END COMPONENT;
+	
+	SIGNAL SMI : STD_LOGIC;
+	SIGNAL SIGA, SIGR, SIGS : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	
+BEGIN
+	SIGA <= A;
+	SIGR <= R;
+	SIGS <= S;
+	for1: FOR i in 0 TO 1365 GENERATE
+		bc: bloco_comparador PORT MAP(A,B,SMI);
+		bs: bloco_subtrator  PORT MAP(A,B,R);
+			WITH SMI SELECT
+				SIGA <= SIGR WHEN '1', A WHEN OTHERS;
+				SIGS <= SIGS + 1 WHEN '1', S WHEN OTHERS;
+	END GENERATE for1;
